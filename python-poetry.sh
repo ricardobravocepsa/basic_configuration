@@ -6,6 +6,8 @@ cd Python-3.9.16
 sudo ./configure --enable-optimizations 
 sudo make altinstall 
 sudo rm -f /opt/Python-3.9.16.tgz 
-python3.9 -m venv env 
+echo "alias python='python3.9'" >> .bashrc
+source .bashrc
+python -m venv env 
 source env/bin/activate 
 curl -sSL https://install.python-poetry.org | python3 -
