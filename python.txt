@@ -16,3 +16,7 @@ echo "alias python='python3.10'" >> $HOME/.bashrc
 echo "alias pip3='pip3.10'" >> $HOME/.bashrc
 echo "alias python3='python3.10'" >> $HOME/.bashrc 
 source $HOME/.bashrc
+
+cd $HOME/environment
+python -m venv venv 
+source venv/bin/activate 
