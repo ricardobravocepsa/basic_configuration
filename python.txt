@@ -1,0 +1,18 @@
+sudo yum update -y 
+sudo yum groupinstall "Development Tools" -y 
+sudo yum erase openssl-devel -y 
+sudo yum install openssl11 openssl11-devel libffi-devel bzip2-devel wget -y
+cd /opt
+sudo wget https://www.python.org/ftp/python/3.10.4/Python-3.10.4.tgz
+sudo tar -xf Python-3.10.4.tgz
+cd Python-3.10.4/
+./configure --enable-optimizations
+sudo make altinstall
+
+sudo rm -f /opt/Python-3.10.4.tgz 
+python3.10 -V 
+echo "alias pip='pip3.10'" >> $HOME/.bashrc
+echo "alias python='python3.10'" >> $HOME/.bashrc 
+echo "alias pip3='pip3.10'" >> $HOME/.bashrc
+echo "alias python3='python3.10'" >> $HOME/.bashrc 
+source $HOME/.bashrc
